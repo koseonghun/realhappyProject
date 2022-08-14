@@ -10,6 +10,8 @@ public class LoginController {
 	@RequestMapping("loginbtn")
 	public String login(@RequestParam String userid, @RequestParam String userpw) { 
 		
+		//name으로 값을 바
+		
 		System.out.println(userid);
 		System.out.println(userpw);
 		
