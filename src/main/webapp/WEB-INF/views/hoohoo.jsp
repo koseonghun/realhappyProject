@@ -7,5 +7,6 @@
 </head>
 <body>
 아녕하세연~ ㅋㅋ
+<a href="/login">로그인하러가기</a>
 </body>
 </html>

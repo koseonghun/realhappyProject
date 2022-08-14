@@ -42,4 +42,9 @@ public class HomeController {
 		return "hoohoo";
 	}
 	
+	@RequestMapping("/login")
+	public String login() {
+		return "login";
+	}
+	
 }
