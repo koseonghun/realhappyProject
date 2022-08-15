@@ -20,23 +20,31 @@ public class LoginController {
 			System.out.println(idDataBase[i]);
 			System.out.println(pwDataBase[i]);
 		} // 아이디 비밀 번호 설정 완료
-		System.out.println("아이디 정보 : " + idDataBase.toString());
-		System.out.println("비밀번호 정보 : " + pwDataBase.toString());
-
-		for (int y = 0; y <= 8; y++) {
-			if (userid.equals(idDataBase[y])) {
+		//System.out.println("아이디 정보 : " + idDataBase.toString());
+		//System.out.println("비밀번호 정보 : " + pwDataBase.toString());
+		
+		for (int y = 0; y < 8; y++) {
+		System.out.println("입력값 : " + userid + "==?  데이터 베이스 아이디" + idDataBase[y]);
+		System.out.println("입력값 : " + userpw + "==?  데이터 베이스 아이디" + pwDataBase[y]);
+			
+		System.out.println("===========================================================");
+		if (userid.equals(idDataBase[y])) { // 아이디
 				if (userpw.equals(pwDataBase[y])) {
-					return "successlogin";
+					System.out.println("아이디 비번 성공!");
+					return "successlogin"; //성공
+				}else {
+					System.out.println("비번 틀림");
+					return "check";
 				}
-				return "check";
-			} else if (userid.equals(adminid)) {
+			} else if (userid.equals(adminid)) { //관리자
 				if (userpw.equals(adminpw)) {
-					return "adminpage";
+					return "adminpage"; //관리자
 				}
 			}
 		}
-		return "faillogin";	
+		return "faillogin";
 	}
+		
 }
 // if(userid.equals(adminid)) {
 //			if(userpw.equals(adminpw)) {
