@@ -30,10 +30,10 @@ public class LoginController {
 		System.out.println("===========================================================");
 		if (userid.equals(idDataBase[y])) { // 아이디
 				if (userpw.equals(pwDataBase[y])) {
-					System.out.println("아이디 비번 성공!");
+					//System.out.println("아이디 비번 성공!");
 					return "successlogin"; //성공
 				}else {
-					System.out.println("비번 틀림");
+					//System.out.println("비번 틀림");
 					return "check";
 				}
 			} else if (userid.equals(adminid)) { //관리자
