@@ -10,7 +10,8 @@ public class LoginController {
 	public static String adminpw = "1234";
 	public static String[] idDataBase = new String[8];
 	public static String[] pwDataBase = new String[8];
-
+	
+	
 	@RequestMapping("loginbtn")
 	public String login(@RequestParam String userid, @RequestParam String userpw) {
 
@@ -44,17 +45,12 @@ public class LoginController {
 		}
 		return "faillogin";
 	}
+	
+	@RequestMapping("/register")
+		public String regitser() {	
 		
+		return "register/registerForm";
+	}
 }
-// if(userid.equals(adminid)) {
-//			if(userpw.equals(adminpw)) {
-//				return "successlogin";
-//			}else {
-//				System.out.println("비밀번호가 틀렸습니다.");
-//			}
-//			
-//		}else {
-//				System.out.println("아이디가 틀렸습니다.");
-//		}
-//		
-//		return "faillogin";
+		
+
