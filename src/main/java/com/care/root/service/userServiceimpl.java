@@ -1,4 +1,4 @@
-package com.care.root;
+package com.care.root.service;
 
 import javax.inject.Inject;
 
@@ -10,14 +10,14 @@ import com.care.root.mybatis.MemberDAO;
 @Service
 public class userServiceimpl implements userService {
 
-	@Inject
-	MemberDAO membermapper;
-	
+	@Autowired
+	private MemberDAO dao;
+
 	@Override
-	public void userjoin(UserVO vo) throws Exception{
+	public void userRegister(String userid, String userpw, String userpw2, String username) {
+	
+		dao.userinsert(userid, userpw, userpw2, username);
 		
-		membermapper.userjoin(vo);
 	}
-	
-	
+
 }

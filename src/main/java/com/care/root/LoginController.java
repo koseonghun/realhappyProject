@@ -1,11 +1,15 @@
 package com.care.root;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class LoginController {
+public class LoginController {	
 	public static String adminid = "hoon";
 	public static String adminpw = "1234";
 	public static String[] idDataBase = new String[8];
@@ -51,6 +55,20 @@ public class LoginController {
 		
 		return "register/registerForm";
 	}
+	
+	
+	/*
+	 * @RequestMapping("/registerbtn") public String register(UserVO
+	 * vo,@RequestParam String userid, @RequestParam String userpw, @RequestParam
+	 * String userpw2, @RequestParam String username) {
+	 * 
+	 * 
+	 * System.out.println(userid); System.out.println(userpw);
+	 * System.out.println(userpw2); System.out.println(username);
+	 * System.out.println(vo); System.out.println("join성공!");
+	 * 
+	 * return "faillogin"; }
+	 */
 }
 		
 

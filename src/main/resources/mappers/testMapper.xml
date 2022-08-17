@@ -3,7 +3,7 @@
 <mapper namespace="com.care.root.mybatis">
 
 	
-	<insert id="userjoin">
+	<insert id="userinsert">
 		
 		insert into userinfo(userid,userpw,userpw2,username)
 		values (#{userid},#{userpw},#{userpw2},#{username})

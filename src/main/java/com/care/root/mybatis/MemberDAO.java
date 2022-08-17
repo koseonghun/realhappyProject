@@ -1,9 +1,9 @@
 package com.care.root.mybatis;
 
-import com.care.root.UserVO;
+import com.care.root.vo.UserVO;
 
 public interface MemberDAO {
 
-	public void userjoin(UserVO vo) throws Exception;
+	void userinsert(String userid, String userpw, String userpw2, String username);
 	
 }

@@ -1,4 +1,4 @@
-package com.care.root;
+package com.care.root.vo;
 
 public class UserVO {
 	private String userid;
