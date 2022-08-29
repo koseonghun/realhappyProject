@@ -24,7 +24,7 @@
 				</td>
 			</tr>
 		</table>
-		<button type="button" id="signup" onclick="location.href='register'">회원가입</button>
+		<button type="button" id="signup" onclick="location.href='/register'">회원가입</button>
 		<button type="submit" id="loginbtn">로그인</button>
 </form>
 

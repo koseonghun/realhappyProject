@@ -1,10 +1,10 @@
 package com.care.root.vo;
 
 public class UserVO {
-	private String userid;
-	private String userpw;
-	private String userpw2;
-	private String username;
+	String userid;
+	String userpw;
+    String userpw2;
+	String username;
 	
 	public String getUserid() {
 		return userid;

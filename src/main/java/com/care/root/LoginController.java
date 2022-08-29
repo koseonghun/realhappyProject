@@ -1,12 +1,12 @@
 package com.care.root;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+
+import com.care.root.service.UserService;
+import com.care.root.vo.UserVO;
 
 @Controller
 public class LoginController {	
@@ -14,6 +14,7 @@ public class LoginController {
 	public static String adminpw = "1234";
 	public static String[] idDataBase = new String[8];
 	public static String[] pwDataBase = new String[8];
+	
 	
 	
 	@RequestMapping("loginbtn")
@@ -50,11 +51,28 @@ public class LoginController {
 		return "faillogin";
 	}
 	
-	@RequestMapping("/register")
-		public String regitser() {	
+		private UserService userService;
 		
-		return "register/registerForm";
+		public void register(UserService userservice) {
+			this.userService = userservice;
+		}
+	
+	@RequestMapping("/register")
+		public String regitser(UserVO userVO) throws Exception {	
+		
+
+		userVO.setUserid(userid);
+		userVO.setUsername(username);
+		userVO.setUserpw(userpw);
+		userVO.setUserpw2(userpw2);
+		
+		userService.userRegister(userVO);
+		System.out.println(userVO);
+		
+		return "register/login";
 	}
+		
+	
 	
 	
 	/*

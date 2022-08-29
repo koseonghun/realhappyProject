@@ -2,22 +2,25 @@ package com.care.root.service;
 
 import javax.inject.Inject;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.care.root.mybatis.MemberDAO;
+import com.care.root.mybatis.UserDAO;
+import com.care.root.vo.UserVO;
 
 @Service
-public class userServiceimpl implements userService {
+public class UserServiceImpl implements UserService {
 
-	@Autowired
-	private MemberDAO dao;
-
-	@Override
-	public void userRegister(String userid, String userpw, String userpw2, String username) {
+	private final UserDAO userDAO;
 	
-		dao.userinsert(userid, userpw, userpw2, username);
-		
+	@Inject
+	public UserServiceImpl(UserDAO userDAO) {
+		this.userDAO=userDAO;
 	}
 
+	@Override
+	public void userRegister(UserVO userVO) throws Exception {
+		userDAO.register(userVO);
+		
+	}
+	
 }
