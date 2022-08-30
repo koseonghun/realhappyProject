@@ -51,20 +51,32 @@ public class LoginController {
 		return "faillogin";
 	}
 	
-		private UserService userService;
+		UserService userService;
 		
-		public void register(UserService userservice) {
+		public void userRegister(UserService userservice) {
 			this.userService = userservice;
 		}
-	
+		
 	@RequestMapping("/register")
+		public String registerform() {
+		
+		return "register/registerForm";
+	}
+	
+	@RequestMapping("registerbtn")
 		public String regitser(UserVO userVO) throws Exception {	
 		
-
-		userVO.setUserid(userid);
-		userVO.setUsername(username);
-		userVO.setUserpw(userpw);
-		userVO.setUserpw2(userpw2);
+		
+		userVO.getUserid();
+		userVO.getUsername();
+		userVO.getUserpw();
+		userVO.getUserpw2();
+		
+		System.out.println(userVO.getUserid());
+		System.out.println(userVO.getUsername());
+		System.out.println(userVO.getUserpw());
+		System.out.println(userVO.getUserpw2());
+		
 		
 		userService.userRegister(userVO);
 		System.out.println(userVO);

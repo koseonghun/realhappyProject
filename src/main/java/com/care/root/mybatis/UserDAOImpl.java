@@ -11,7 +11,7 @@ public class UserDAOImpl implements UserDAO{
 	private final SqlSession sqlSession;
 	
 	@Inject
-	public UserDAOImpl(SqlSession sqlSession)
+	public UserDAOImpl(SqlSession sqlSession) {
 	this.sqlSession = sqlSession;
 	
 }
@@ -25,8 +25,10 @@ public class UserDAOImpl implements UserDAO{
 
 	@Override
 	public void register(UserVO userVO) throws Exception {
-		sqlSession.insert(userVO);
 		
 	}
+
+
+
 		
 }
