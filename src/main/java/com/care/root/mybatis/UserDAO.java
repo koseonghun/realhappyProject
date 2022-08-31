@@ -6,6 +6,5 @@ public interface UserDAO {
 
 	void register(UserVO userVO) throws Exception;
 
-	void register(String userVO) throws Exception;
 	
 }

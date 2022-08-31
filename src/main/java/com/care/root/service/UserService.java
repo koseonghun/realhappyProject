@@ -7,7 +7,10 @@ import com.care.root.vo.UserVO;
 @Service
 public interface UserService {
 
-		void userRegister(UserVO userVO) throws Exception;
+	
+	
+	
+	void userRegister(UserVO userVO) throws Exception;
 
 		
 		

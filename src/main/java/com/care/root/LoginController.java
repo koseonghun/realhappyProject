@@ -1,8 +1,8 @@
 package com.care.root;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.care.root.service.UserService;
@@ -51,11 +51,11 @@ public class LoginController {
 		return "faillogin";
 	}
 	
-		UserService userService;
+	@Autowired
+	UserService userService;
 		
-		public void userRegister(UserService userservice) {
-			this.userService = userservice;
-		}
+	
+		
 		
 	@RequestMapping("/register")
 		public String registerform() {
