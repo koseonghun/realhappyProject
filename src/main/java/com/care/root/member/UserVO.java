@@ -1,11 +1,11 @@
-package com.care.root.vo;
+package com.care.root.member;
 
 public class UserVO {
-	String userid;
-	String userpw;
-    String userpw2;
-	String username;
 	
+	private String userid;
+	private String userpw;
+	private String userpw2;
+	private String username;
 	public String getUserid() {
 		return userid;
 	}
@@ -30,6 +30,7 @@ public class UserVO {
 	public void setUsername(String username) {
 		this.username = username;
 	}
+	
 	
 	
 }

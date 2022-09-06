@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>회원가입 페이지 입니다.</h1>
-<form action="registerbtn">
+<form action="/registerbtn">
 <table>
 	<tr>
 		<td>
