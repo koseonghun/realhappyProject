@@ -28,7 +28,6 @@ public class UserServiceImpl implements UserService {
 		System.out.println(vo.getUserid()+"로그인");
 		System.out.println(vo.getUserpw()+"로그인");
 		System.out.println(vo.getUserpw2()+"로그인");
-		System.out.println(vo.getUsername()+"로그인");
 		mapper.login(vo);
 		
 	}
