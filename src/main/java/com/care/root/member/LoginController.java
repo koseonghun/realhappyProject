@@ -2,7 +2,11 @@ package com.care.root.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class LoginController {
@@ -31,7 +35,46 @@ public class LoginController {
 
 		return "/main";
 	}
-
+	
+	@PostMapping("idcheck")
+	@ResponseBody
+	public String idcheck(@RequestParam String id) {
+		
+		System.out.println(id);
+		
+		return "1";
+	}
+	
+	
+	/*
+	 * //GetMapping 형식
+	 * 
+	 * @GetMapping("idcheck")
+	 * 
+	 * @ResponseBody //결과값을 result로 보내준다 public String idcheck(@RequestParam String
+	 * id) {
+	 * 
+	 * System.out.println(id);
+	 * 
+	 * return "1"; }
+	 */
+	
+/*
+ * @PostMapping("namecheck")
+ * @ResponseBody public String namecheck(@RequestParam String name) {
+ * System.out.println(name);
+ * return "name"; }
+ * 
+ * }
+ */
+	@GetMapping("namecheck")
+	@ResponseBody
+	public String namecheck(@RequestParam String name) {
+		
+		System.out.println(name);
+		
+		return "name";
+	}
 }
 
 /*
