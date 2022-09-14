@@ -28,7 +28,19 @@ public class UserServiceImpl implements UserService {
 		System.out.println(vo.getUserid()+"로그인");
 		System.out.println(vo.getUserpw()+"로그인");
 		System.out.println(vo.getUserpw2()+"로그인");
+		
+		System.out.println("*******************"+vo);
+		
 		mapper.login(vo);
+		
+	}
+
+	@Override
+	public void idcheck(String id) {
+		
+		System.out.println("serviceImpl!!!"+id);
+		
+		mapper.idcheck(id);
 		
 	}
 

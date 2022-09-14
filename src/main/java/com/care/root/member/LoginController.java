@@ -40,67 +40,19 @@ public class LoginController {
 	@ResponseBody
 	public String idcheck(@RequestParam String id) {
 		
-		System.out.println(id);
+		us.idcheck(id);
+		System.out.println("controller!!!"+id);
+		System.out.println("값을 가져오긴하는데 어케 가져와서 나눠야할까");
 		
-		return "1";
+		if(id==null) {
+			System.out.println("userlist 테이블에 존재하면 여기로와야지..");
+			return "0";
+		}else {
+			System.out.println("id에 값이 없을때 return 1을 주긴하는데..흠");
+			return "1";
+		}
 	}
 	
-	
-	/*
-	 * //GetMapping 형식
-	 * 
-	 * @GetMapping("idcheck")
-	 * 
-	 * @ResponseBody //결과값을 result로 보내준다 public String idcheck(@RequestParam String
-	 * id) {
-	 * 
-	 * System.out.println(id);
-	 * 
-	 * return "1"; }
-	 */
-	
-/*
- * @PostMapping("namecheck")
- * @ResponseBody public String namecheck(@RequestParam String name) {
- * System.out.println(name);
- * return "name"; }
- * 
- * }
- */
-	@GetMapping("namecheck")
-	@ResponseBody
-	public String namecheck(@RequestParam String name) {
-		
-		System.out.println(name);
-		
-		return "name";
-	}
 }
 
-/*
- * @RequestMapping("loginbtn") 
- * public String login(@RequestParam String userid, @RequestParam String userpw) {
- * 
- * for (int i = 0; i < idDataBase.length; i++) { 
- * idDataBase[i] = "id" + i;
- * pwDataBase[i] = "pw" + i; 
- * System.out.println(idDataBase[i]);
- * System.out.println(pwDataBase[i]); } // 아이디 비밀 번호 설정 완료
- * 
- * for (int y = 0; y < 8; y++) { 
- *		 if (userid.equals(idDataBase[y])) { // 아이디 
- * 			if (userpw.equals(pwDataBase[y])) {
- * 		//System.out.println("아이디 비번 성공!"); 
- *				return "successlogin"; //성공 
- * 		}else {
- * 		//System.out.println("비번 틀림"); 
- * 				return "check"; 
- * 		} 
- * } 
- * else if (userid.equals(adminid)) { //관리자 
- * if (userpw.equals(adminpw)) { 
- * return "adminpage"; //관리자 } 
- * } 
-} 
-return "faillogin"; }
- */
+

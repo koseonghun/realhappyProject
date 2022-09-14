@@ -11,8 +11,7 @@
 <script>
 
 function idcheck(){
-	//alert("중복체크")
-	
+	//alert("중복체크!")
 	var id = $("#userid").val();
 	
 	$.ajax({
@@ -23,76 +22,16 @@ function idcheck(){
 		},
 		datatype : "json",
 		success : function(result){
-			alert("성공!!")
-		}, error : function(){
-			alert("실패!!")
-		}
-	})
-	
-}
-
-
-/* function idcheck(){
-	//alert("중복체크")
-	var id = $("#userid").val();
-	
-	//get 방식할때 url 가공해서 보내주는 형식
-	var url = "idcheck?id="+id;
-	// 파라미터 값이 2개일때
-	var url2 = "idcheck?id="+id+"&pw="+pw;
-		
-	$.ajax({
-		url : url,
-		type : "GET", //get = url 에 파라미터 붙여서 보내주고 post = 데이터 숨겨서
-		datatype : "json",
-		success : function(result){
 			console.log(result)
-			alert("성공")
-		} , error : function(){
-			alert("실패")
-		}
-	})
-} */ 
-
-//POST형식
-/* function namecheck(){
-	//	alert("이름이무엇일까?")
-	var name = $("#username").val();
-	
-	$.ajax({
-		url : "namecheck",
-		type : "POST",
-		data : {
-			name : name
-		},
-		datatype : "json",
-		success : function(name){
-			console.log(name)
-			alert("성공")
+			if(result==0){
+			alert("이미 사용중인 아이디입니다.")
+			}else if(result==1){
+			alert("사용하실수있는 아이디입니다.")
+			}
 		}, error : function(){
-			alert("실패")
+			alert("에러!!")
 		}
 	})
-	
-} */
-
-function namecheck(){
-	//	alert("이름이무엇일까?")
-	var name = $("#username").val();
-	var url = "namecheck?name="+name;
-	
-	$.ajax({
-		url : url,
-		type : "GET",
-		datatype : "json",
-		success : function(name){
-			console.log(name)
-			alert("성공")
-		}, error : function(){
-			alert("실패")
-		}
-	})
-	
 }
 
 </script>
@@ -136,9 +75,6 @@ function namecheck(){
 		</td>
 		<td>
 			<input type="text" id="username" name="username" placeholder="이름를 입력하세요">
-		</td>
-		<td>
-			<button type="button" onclick="javascript:namecheck()">이름체크</button>
 		</td>
 	</tr>
 	<tr>
