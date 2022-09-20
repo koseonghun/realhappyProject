@@ -21,12 +21,15 @@ function idcheck(){
 			id : id
 		},
 		datatype : "json",
-		success : function(result){
-			console.log(result)
-			if(result==0){
-			alert("이미 사용중인 아이디입니다.")
-			}else if(result==1){
-			alert("사용하실수있는 아이디입니다.")
+		success : function(idcheck){
+			
+			console.log(idcheck)
+			if(idcheck==1){
+			$('input[name=loginStatus]').attr('value',idcheck);
+			alert("이미 사용중인 아이디입니다!")
+			}else if(idcheck==0){
+			$('input[name=loginStatus]').attr('value',idcheck);
+			alert("사용하실 수 있는 아이디입니다!")
 			}
 		}, error : function(){
 			alert("에러!!")
@@ -34,13 +37,69 @@ function idcheck(){
 	})
 }
 
+function register(){
+	
+	var id = $("#userid").val();
+	var pw = $("#userpw").val();
+	var pw2 = $("#userpw2").val();
+	var username = $("#username").val();
+	var registercheck = $("#loginStatus").val();
+	
+	if(id==""){
+		alert("아이디를 입력해주세요.")
+	}else if(pw==""){
+		alert("비밀번호를 입력해주세요.")
+	}else if(pw2==""){
+		alert("비밀번호를 다시 입력해주세요.")
+	}else if(pw!=pw2){
+		alert("비밀번호와 비밀번호2가 다릅니다.")
+	}else if(username==""){
+		alert("이름을 입력해주세요.")
+	}else if(registercheck=="1"){
+		alert("아이디를 다시 확인해주세요.")
+	}else{
+		registerbtn.submit();
+	}
+	
+}
+/* function register1(){
+	
+	var id = $("#userid").val();
+	var pw = $("#userpw").val();
+	var pw2 = $("#userpw2").val();
+	var username = $("#username").val();
+	var registercheck = $("#loginStatus").val();
+	
+	$("input[name=id]").attr('value',id);
+	$("input[name=pw]").attr('value',pw);
+	$("input[name=pw2]").attr('value',pw2);
+	$("input[name=username]").attr('value',username);
+	
+	if(id==""){
+		alert("아이디를 입력해주세요.")
+	}else if(pw==""){
+		alert("비밀번호를 입력해주세요.")
+	}else if(pw2==""){
+		alert("비밀번호를 다시 입력해주세요.")
+	}else if(pw!=pw2){
+		alert("비밀번호와 비밀번호2가 다릅니다.")
+	}else if(username==""){
+		alert("이름을 입력해주세요.")
+	}else if(registercheck=="1"){
+		alert("아이디를 다시 확인해주세요.")
+	}else{
+		hiddenregister.submit();
+	}
+	
+} */
+
 </script>
 
 </head>
 <body>
 <h1>회원가입 페이지 입니다.</h1>
 
-<form action="/registerbtn">
+<form id="registerbtn" action="/registerbtn" method="POST">
 <table>
 	<tr>
 		<td>
@@ -58,7 +117,8 @@ function idcheck(){
 			비밀번호 : 
 		</td>
 		<td>
-			<input type="password" name="userpw" placeholder="비밀번호를 입력하세요">
+			<input type="password" id="userpw" name="userpw" placeholder="비밀번호를 입력하세요">
+		
 		</td>
 	</tr>
 	<tr>
@@ -66,7 +126,8 @@ function idcheck(){
 			비밀번호 재입력 : 
 		</td>
 		<td>
-			<input type="password" name="userpw2" placeholder="비밀번호를 다시 입력하세요">
+			<input type="password" id="userpw2" name="userpw2" placeholder="비밀번호를 다시 입력하세요">
+			
 		</td>
 	</tr>
 	<tr>
@@ -79,10 +140,21 @@ function idcheck(){
 	</tr>
 	<tr>
 		<td>
-			<button type="submit">회원가입</button>
+			<button type="button" onclick ="javascript:register();">회원가입</button>
 		</td>
 	</tr>
 </table>
 </form>
+<input type="hidden" id="loginStatus" name="loginStatus" value="">
+
+<!-- <button type="button" onclick ="javascript:register1();">오오오</button> -->
+<!-- 
+<from id="hiddenregister" action="/registerbtn" method="POST">
+<input type="hidden" id="id" name="id" value="">
+<input type="hidden" id="pw" name="pw" value="">
+<input type="hidden" id="pw2" name="pw2" value="">
+<input type="hidden" id="name" name="name" value="">
+</from>
+ -->
 </body>
 </html>

@@ -6,7 +6,7 @@ public interface UserMapper {
 	
 	public void login(UserVO vo);
 
-	public void idcheck(String id);
+	public int idcheck(String id);
 	
 	
 	

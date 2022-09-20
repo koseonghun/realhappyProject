@@ -20,9 +20,9 @@ public class LoginController {
 	@Autowired
 	UserService us;
 
-	@RequestMapping("/registerbtn")
+	@PostMapping("/registerbtn")
 	public String register(UserVO vo) {
-
+		
 		us.register(vo);
 
 		return "/login";
@@ -38,20 +38,18 @@ public class LoginController {
 	
 	@PostMapping("idcheck")
 	@ResponseBody
-	public String idcheck(@RequestParam String id) {
+	public int idcheck(@RequestParam String id) {
 		
-		us.idcheck(id);
-		System.out.println("controller!!!"+id);
-		System.out.println("값을 가져오긴하는데 어케 가져와서 나눠야할까");
+		System.out.println("받아온 값!!"+id);
 		
-		if(id==null) {
-			System.out.println("userlist 테이블에 존재하면 여기로와야지..");
-			return "0";
-		}else {
-			System.out.println("id에 값이 없을때 return 1을 주긴하는데..흠");
-			return "1";
-		}
+		int idcheck = us.idcheck(id);
+		
+		System.out.println("넘겨주는 값!!"+idcheck);
+		
+		return idcheck;
 	}
+	
+	
 	
 }
 

@@ -6,6 +6,6 @@ public interface UserService {
 	
 	public void login(UserVO vo);
 
-	public void idcheck(String id);
+	public int idcheck(String id);
 	
 }

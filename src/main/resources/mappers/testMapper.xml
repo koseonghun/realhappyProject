@@ -23,8 +23,8 @@
 	</select> -->
 	
 	<!-- 중복체크 -->
-	<select id="idcheck" parameterType="com.care.root.member.UserVO" resultType="int">
-		select userid
+	<select id="idcheck" parameterType="String" resultType="int">
+		select count(1)
 		from userlist where userid =#{userid}
 	</select>
 	

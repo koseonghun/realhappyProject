@@ -36,11 +36,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void idcheck(String id) {
+	public int idcheck(String id) {
 		
 		System.out.println("serviceImpl!!!"+id);
 		
-		mapper.idcheck(id);
+		return mapper.idcheck(id);
 		
 	}
 
