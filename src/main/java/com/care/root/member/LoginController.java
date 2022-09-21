@@ -2,7 +2,6 @@ package com.care.root.member;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,13 +26,20 @@ public class LoginController {
 
 		return "/login";
 	}
-
+	
 	@RequestMapping("loginbtn")
 	public String login(UserVO vo) {
-
-		us.login(vo);
-
-		return "/main";
+		
+		UserVO login = us.login(vo);
+		
+		if(login==null) {
+			System.out.println("실패!!!!!!!!!!!!!!!!!!"+login);
+			System.out.println("없는아이디 비번임.");
+			return "/faillogin";
+		}else {
+			System.out.println("성공!!!!!!!!!!!!!!!!!!"+login);
+			return "/main";
+		}
 	}
 	
 	@PostMapping("idcheck")

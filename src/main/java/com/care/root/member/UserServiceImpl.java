@@ -22,18 +22,19 @@ public class UserServiceImpl implements UserService {
 		
 	}
 
-	@Override
-	public void login(UserVO vo) {
-		
-		System.out.println(vo.getUserid()+"로그인");
-		System.out.println(vo.getUserpw()+"로그인");
-		System.out.println(vo.getUserpw2()+"로그인");
-		
-		System.out.println("*******************"+vo);
-		
-		mapper.login(vo);
-		
-	}
+	
+	 @Override 
+	 public UserVO login(UserVO vo) {
+	 
+	 System.out.println(vo.getUserid()+"로그인");
+	 System.out.println(vo.getUserpw()+"로그인");
+	 
+	 
+	 System.out.println("*******************"+vo); 
+	 return mapper.login(vo);
+	 
+	 }
+	 
 
 	@Override
 	public int idcheck(String id) {
@@ -43,5 +44,4 @@ public class UserServiceImpl implements UserService {
 		return mapper.idcheck(id);
 		
 	}
-
 }

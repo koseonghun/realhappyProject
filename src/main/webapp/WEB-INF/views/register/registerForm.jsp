@@ -25,10 +25,10 @@ function idcheck(){
 			
 			console.log(idcheck)
 			if(idcheck==1){
-			$('input[name=loginStatus]').attr('value',idcheck);
+			$("input[name=inputcheck]").attr("value",idcheck)
 			alert("이미 사용중인 아이디입니다!")
 			}else if(idcheck==0){
-			$('input[name=loginStatus]').attr('value',idcheck);
+			$("input[name=inputcheck]").attr("value",idcheck)
 			alert("사용하실 수 있는 아이디입니다!")
 			}
 		}, error : function(){
@@ -43,7 +43,7 @@ function register(){
 	var pw = $("#userpw").val();
 	var pw2 = $("#userpw2").val();
 	var username = $("#username").val();
-	var registercheck = $("#loginStatus").val();
+	var input = $("#inputcheck").val();
 	
 	if(id==""){
 		alert("아이디를 입력해주세요.")
@@ -52,15 +52,15 @@ function register(){
 	}else if(pw2==""){
 		alert("비밀번호를 다시 입력해주세요.")
 	}else if(pw!=pw2){
-		alert("비밀번호와 비밀번호2가 다릅니다.")
+		alert("비밀번호가 서로 맞지 않습니다.")	
 	}else if(username==""){
 		alert("이름을 입력해주세요.")
-	}else if(registercheck=="1"){
-		alert("아이디를 다시 확인해주세요.")
-	}else{
+	}else if(input=="1"){
+		alert("아이디가 중복되었습니다.")
+	}else {
 		registerbtn.submit();
 	}
-	
+
 }
 /* function register1(){
 	
@@ -98,8 +98,7 @@ function register(){
 </head>
 <body>
 <h1>회원가입 페이지 입니다.</h1>
-
-<form id="registerbtn" action="/registerbtn" method="POST">
+<form action="/registerbtn" id="registerbtn" method ="POST">
 <table>
 	<tr>
 		<td>
@@ -145,10 +144,10 @@ function register(){
 	</tr>
 </table>
 </form>
-<input type="hidden" id="loginStatus" name="loginStatus" value="">
+<input type="hidden" id="inputcheck" name='inputcheck' value=''></input>
 
-<!-- <button type="button" onclick ="javascript:register1();">오오오</button> -->
-<!-- 
+<!-- <button type="button" onclick ="javascript:register1();">오오오</button>
+ 
 <from id="hiddenregister" action="/registerbtn" method="POST">
 <input type="hidden" id="id" name="id" value="">
 <input type="hidden" id="pw" name="pw" value="">

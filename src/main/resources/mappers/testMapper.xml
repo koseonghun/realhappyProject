@@ -15,12 +15,12 @@
 	</insert>
 	
 	<!-- 로그인 -->
-<!-- 	<select id="login" resultType="com.care.root.member.UserVO">
-		select userid, userpw, userpw2 
+ 	<select id="login" resultType="com.care.root.member.UserVO">
+		select userid, userpw
 		from userlist
-		where userid = #{userid} and userpw = #{userpw}
-		and userpw2 = #{userpw2}
-	</select> -->
+		where userid = #{userid} 
+		  and userpw = #{userpw}
+	</select>
 	
 	<!-- 중복체크 -->
 	<select id="idcheck" parameterType="String" resultType="int">
