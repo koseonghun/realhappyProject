@@ -8,11 +8,18 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 
-function loginbtn(){
+function login(){
 	
-	id = $("#userid").val();
-	pw = $("#userpw").val();
+	var id = $("#userid").val();
+	var pw = $("#userpw").val();
 	
+	if(id==""){
+		alert("아이디를 입력해주세요.")
+	}else if(pw==""){
+		alert("비밀번호를 입력해주세요.")
+	}else{
+		loginbtn.submit();
+	}
 	
 }
 
@@ -22,7 +29,7 @@ function loginbtn(){
 </head>
 <body>
 
-<form action="loginbtn" method = "post" id="loginbtn">
+<form action="loginbtn" id="loginbtn" method = "POST">
 		<table border="1">
 			<tr>
 				<td>아이디 </td>
@@ -40,7 +47,7 @@ function loginbtn(){
 			</tr>
 		</table>
 		<button type="button" id="signup" onclick="location.href='/register'">회원가입</button>
-		<button type="submit">로그인</button>
+		<button type="button" onclick="javascript:login();">로그인</button>
 </form>
 
  </body>

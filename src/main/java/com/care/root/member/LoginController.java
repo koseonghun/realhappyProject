@@ -27,7 +27,7 @@ public class LoginController {
 		return "/login";
 	}
 	
-	@RequestMapping("loginbtn")
+	@PostMapping("loginbtn")
 	public String login(UserVO vo) {
 		
 		UserVO login = us.login(vo);
