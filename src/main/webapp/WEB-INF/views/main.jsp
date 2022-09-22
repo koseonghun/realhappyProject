@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인 페이지</title>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>
-환영합니다!
-</body>
+		<button type="button" onclick="window.open('login','login_popup','width=900,height=1000,location=no,status=no,scrollbars=yes')">로그인</button>
+		<button type="button" onclick="window.open('register','login_popup','width=900,height=1000,location=no,status=no,scrollbars=yes')">회원가입</button>
+ </body>
 </html>

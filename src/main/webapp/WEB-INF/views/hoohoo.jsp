@@ -3,10 +3,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>뭐여 ㅋㅋ</title>
+<title>안녕하세요.</title>
 </head>
 <body>
-아녕하세연~ ㅋㅋ
-<a href="/login">로그인하러가기</a>
+안녕하세요. 메인홈페이지입니다.
+<br/>
+<form action="main">
+	<button type="button">로그인 혹은 회원가입 창으로 이동.</button>
+</form>
 </body>
 </html>

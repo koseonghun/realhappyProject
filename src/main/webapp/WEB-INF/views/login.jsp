@@ -46,7 +46,7 @@ function login(){
 				</td>
 			</tr>
 		</table>
-		<button type="button" id="signup" onclick="location.href='/register'">회원가입</button>
+		<!-- <button type="button" id="signup" onclick="location.href='/register'">회원가입</button> -->
 		<button type="button" onclick="javascript:login();">로그인</button>
 </form>
 

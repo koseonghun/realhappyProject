@@ -15,6 +15,12 @@ public class LoginController {
 
 		return "/register/registerForm";
 	}
+	
+	@RequestMapping("/main")
+	public String main() {
+		
+		return "/main";
+	}
 
 	@Autowired
 	UserService us;
@@ -38,7 +44,7 @@ public class LoginController {
 			return "/faillogin";
 		}else {
 			System.out.println("성공!!!!!!!!!!!!!!!!!!"+login);
-			return "/main";
+			return "/adminpage";
 		}
 	}
 	
