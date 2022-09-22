@@ -9,7 +9,7 @@
 안녕하세요. 메인홈페이지입니다.
 <br/>
 <form action="main">
-	<button type="button">로그인 혹은 회원가입 창으로 이동.</button>
+	<button type="submit">로그인 혹은 회원가입 창으로 이동.</button>
 </form>
 </body>
 </html>
