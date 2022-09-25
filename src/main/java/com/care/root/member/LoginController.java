@@ -1,5 +1,11 @@
 package com.care.root.member;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +27,14 @@ public class LoginController {
 		
 		return "/main";
 	}
-
+	
+	@RequestMapping("homepage")
+	public String homepage() {
+		
+		return "/homepage";
+	}
+	
+	
 	@Autowired
 	UserService us;
 
@@ -34,19 +47,25 @@ public class LoginController {
 	}
 	
 	@PostMapping("loginbtn")
-	public String login(UserVO vo) {
+	@ResponseBody
+	public UserVO login(@RequestParam String id, @RequestParam String pw){
+		
+		System.out.println(id);
+		System.out.println(pw);
+		
+		UserVO vo = new UserVO();
+		
+		vo.setUserid(id);
+		vo.setUserpw(pw);
 		
 		UserVO login = us.login(vo);
 		
-		if(login==null) {
-			System.out.println("실패!!!!!!!!!!!!!!!!!!"+login);
-			System.out.println("없는아이디 비번임.");
-			return "/faillogin";
-		}else {
-			System.out.println("성공!!!!!!!!!!!!!!!!!!"+login);
-			return "/adminpage";
-		}
+		System.out.println("controller!!!!!!!!"+login);
+		
+		return login;
+		
 	}
+	
 	
 	@PostMapping("idcheck")
 	@ResponseBody
@@ -60,6 +79,7 @@ public class LoginController {
 		
 		return idcheck;
 	}
+	
 	
 	
 	

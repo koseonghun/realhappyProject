@@ -8,20 +8,45 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 
+
+
 function login(){
 	
 	var id = $("#userid").val();
 	var pw = $("#userpw").val();
 	
 	if(id==""){
-		alert("아이디를 입력해주세요.")
+		alert("id를 입력해주세요.")
 	}else if(pw==""){
-		alert("비밀번호를 입력해주세요.")
+		alert("pw를 입력해주세요.")
 	}else{
-		loginbtn.submit();
+	$.ajax({
+		url : "loginbtn",
+		type : "POST",
+		data : {
+			id : id,
+			pw : pw
+		},
+		datatype : "json",
+		success : function(login){
+			console.log(login)
+			 if(login==""){
+				$("input[name=logincheck]").attr("value",login)
+				alert("등록되지않은 사용자입니다.")
+			}else{
+				$("input[name=logincheck]").attr("value",login)
+				alert("안녕하세요."+login+"님 반갑습니다.")
+				opener.parent.location="/homepage";
+				window.close();
+			}
+		}, error : function(){
+			alert("에러!!!")
+		}
+	})
 	}
-	
 }
+
+
 
 </script>
 
@@ -46,9 +71,9 @@ function login(){
 				</td>
 			</tr>
 		</table>
-		<!-- <button type="button" id="signup" onclick="location.href='/register'">회원가입</button> -->
 		<button type="button" onclick="javascript:login();">로그인</button>
 </form>
+		<input type="hidden" id="logincheck" name='logincheck' value=''></input>
 
  </body>
 </html>

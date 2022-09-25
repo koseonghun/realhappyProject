@@ -30,6 +30,7 @@ function idcheck(){
 			}else if(idcheck==0){
 			$("input[name=inputcheck]").attr("value",idcheck)
 			alert("사용하실 수 있는 아이디입니다!")
+			
 			}
 		}, error : function(){
 			alert("에러!!")
