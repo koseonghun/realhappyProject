@@ -32,7 +32,7 @@ function login(){
 			console.log(login)
 			 if(login==""){
 				$("input[name=logincheck]").attr("value",login)
-				alert("등록되지않은 사용자입니다.")
+				alert("아이디 또는 비밀번호를 확인해주세요.")
 			}else{
 				$("input[name=logincheck]").attr("value",login)
 				alert("안녕하세요."+login+"님 반갑습니다.")

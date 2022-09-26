@@ -14,6 +14,11 @@ function idcheck(){
 	//alert("중복체크!")
 	var id = $("#userid").val();
 	
+	var no = "^[ㄱ-ㅎ가-힣a-zA-Z0-9]*$";
+	
+	if(id==""){
+		alert("사용하실 아이디를 입력해주세요.")
+	}else{
 	$.ajax({
 		url : "idcheck",
 		type : "POST",
@@ -30,12 +35,12 @@ function idcheck(){
 			}else if(idcheck==0){
 			$("input[name=inputcheck]").attr("value",idcheck)
 			alert("사용하실 수 있는 아이디입니다!")
-			
 			}
 		}, error : function(){
 			alert("에러!!")
 		}
 	})
+	}
 }
 
 function register(){
