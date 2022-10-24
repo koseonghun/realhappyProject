@@ -39,7 +39,7 @@ public class HomeController {
 	@RequestMapping("/index")
 	public String index() {
 		System.out.println("test");
-		return "hoohoo";
+		return "index";
 	}
 	
 	@RequestMapping("/login")

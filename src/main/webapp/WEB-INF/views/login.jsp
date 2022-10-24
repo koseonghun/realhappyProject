@@ -36,6 +36,7 @@ function login(){
 			}else{
 				$("input[name=logincheck]").attr("value",login)
 				alert("안녕하세요."+login+"님 반갑습니다.")
+				//부모 홈페이지 이동할 곳(로그인 성공시 메인 홈페이지)
 				opener.parent.location="/homepage";
 				window.close();
 			}
@@ -45,9 +46,6 @@ function login(){
 	})
 	}
 }
-
-
-
 </script>
 
 

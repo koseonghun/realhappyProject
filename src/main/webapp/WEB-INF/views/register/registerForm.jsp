@@ -13,8 +13,8 @@
 function idcheck(){
 	//alert("중복체크!")
 	var id = $("#userid").val();
-	
 	var no = "^[ㄱ-ㅎ가-힣a-zA-Z0-9]*$";
+	
 	
 	if(id==""){
 		alert("사용하실 아이디를 입력해주세요.")
@@ -63,7 +63,7 @@ function register(){
 		alert("이름을 입력해주세요.")
 	}else if(input=="1"){
 		alert("아이디가 중복되었습니다.")
-	}else {
+	}else{
 		registerbtn.submit();
 	}
 
